@@ -13,6 +13,8 @@ import { LimitStringPipe } from './pipes/limit-string.pipe';
 import { CapitalizarPipe } from './pipes/capitalizar.pipe';
 import { FormsModule } from '@angular/forms';
 import { ContrasenaPipe } from './pipes/contrasena.pipe';
+import { FormularioNgmodelComponent } from './formularios/formulario-ngmodel/formulario-ngmodel.component';
+import { FormularioReactivoComponent } from './formularios/formulario-reactivo/formulario-reactivo.component';
 
 // decorador empieza con @ es una funcion comun y corriente
 @NgModule({
@@ -26,7 +28,9 @@ import { ContrasenaPipe } from './pipes/contrasena.pipe';
     MayusculasPipe,
     LimitStringPipe,
     CapitalizarPipe,
-    ContrasenaPipe
+    ContrasenaPipe,
+    FormularioNgmodelComponent,
+    FormularioReactivoComponent
   ],
   // importar las librerias
   imports: [
