@@ -8,6 +8,11 @@ import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { EjemplosPipesComponent } from './ejemplos-pipes/ejemplos-pipes.component';
 import { RouterModule } from '@angular/router';
+import { MayusculasPipe } from './pipes/mayusculas.pipe';
+import { LimitStringPipe } from './pipes/limit-string.pipe';
+import { CapitalizarPipe } from './pipes/capitalizar.pipe';
+import { FormsModule } from '@angular/forms';
+import { ContrasenaPipe } from './pipes/contrasena.pipe';
 
 // decorador empieza con @ es una funcion comun y corriente
 @NgModule({
@@ -17,13 +22,18 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     AboutComponent,
     NavbarComponent,
-    EjemplosPipesComponent
+    EjemplosPipesComponent,
+    MayusculasPipe,
+    LimitStringPipe,
+    CapitalizarPipe,
+    ContrasenaPipe
   ],
   // importar las librerias
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

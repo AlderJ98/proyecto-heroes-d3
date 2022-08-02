@@ -56,6 +56,70 @@
         <td>fecha</td>
         <td>{{ fecha | date:'short' }}</td>
       </tr>
+      <tr>
+        <td>{{ nombre }}</td>
+        <td>mayusculas</td>
+        <td>{{ nombre | mayusculas }}</td>
+      </tr>
+
+      <!-- se van a crear un pipe ('linit-string') que yo le pase el número de caracteres
+      Andres - 5 = Andre... -->
+      <tr>
+        <td>{{ 'Alder Julian Figueroa Diaz' }}</td>
+        <td>limit-string</td>
+        <td>{{ 'Alder Julian Figueroa Diaz' | limitString:5 }}</td>
+      </tr>
+
+      <!-- Se van a crear pipe de ('capitalizar') -->
+      <!-- AlDeR jUlIAn = Alder Julian -->
+      <tr>
+        <td>{{ 'aLdEr jUlIaN' }}</td>
+        <td>Capitalizar</td>
+        <td>{{ 'aLdEr jUlIaN' | capitalizar }}</td>
+      </tr>
+
+      <tr>
+        <td>Promesa {{ valorPromesa }}</td>
+        <td>async</td>
+        <td>{{ valorPromesa | async }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ heroe }}</td>
+        <td>json</td>
+        <td>{{ heroe | json }}</td>
+      </tr>
+
+      <tr>
+        <td>Promesa {{ valorPromesa }}</td>
+        <td><button (click)="darClick()">Click</button></td>
+        <td>{{ heroe | json }}</td>
+      </tr>
+
+      <!-- Actividad contraseña:
+            Mostrar valor *******
+            Click a un botón ('activar/desactivar')
+            if inactivo ****** else qwerty
+      -->
+      <tr>
+        <td>Con JS</td>
+        <td><button class="btn btn-success" (click)="cambiarType()">Activar/desactivar</button></td>
+        <td><input type="password" id="password"></td>
+      </tr>
+
+      <tr>
+        <td>Con caja de texto {{ pass }}</td>
+        <td><button class="btn btn-danger" (click)="cambiar()">Activar/desactivar</button></td>
+        <td><input type="text" [(ngModel)]="pass"></td>
+      </tr>
+
+      <tr>
+        <td>Con caja de texto {{ isShow }}</td>
+        <td><button class="btn btn-danger" (click)="isShow = !isShow">Activar/desactivar</button></td>
+        <!-- <td>{{ nombre | contrasena:isShow }}</td> -->
+        <td><input type="text" value="{{ nombre | contrasena:isShow}}"></td>
+      </tr>
+
     </tbody>
   </table>
 </div>
