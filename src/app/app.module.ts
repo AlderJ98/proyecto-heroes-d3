@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 import { MayusculasPipe } from './pipes/mayusculas.pipe';
 import { LimitStringPipe } from './pipes/limit-string.pipe';
 import { CapitalizarPipe } from './pipes/capitalizar.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContrasenaPipe } from './pipes/contrasena.pipe';
 import { FormularioNgmodelComponent } from './formularios/formulario-ngmodel/formulario-ngmodel.component';
 import { FormularioReactivoComponent } from './formularios/formulario-reactivo/formulario-reactivo.component';
@@ -37,7 +37,8 @@ import { FormularioReactivoComponent } from './formularios/formulario-reactivo/f
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

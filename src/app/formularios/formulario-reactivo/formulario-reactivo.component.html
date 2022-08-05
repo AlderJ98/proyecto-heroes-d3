@@ -1,1 +1,63 @@
-<p>formulario-reactivo works!</p>
+<h4>Formulario Reactivo</h4>
+<hr>
+
+<form [formGroup]="form">
+  <div class="row">
+    <div class="row form-group">
+      <label class="col-2">Nombre:</label>
+      <div class="col-10">
+        <input type="text" class="form-control" name="nombre" formControlName="nombre">
+      </div>
+      <small *ngIf="usuarioRequerido">Es requerido</small>
+    </div>
+    <div class="row form-group mt-2">
+      <label class="col-2">Apellido:</label>
+      <div class="col-10">
+        <input type="text" class="form-control" name="apellido" formControlName="apellido">
+      </div>
+      <small *ngIf="apellido?.invalid" class="text-danger">Es requerido</small>
+    </div>
+    <div class="row form-group mt-2">
+      <label class="col-2">Email:</label>
+      <div class="col-10">
+        <input type="email" class="form-control" name="email" formControlName="email">
+      </div>
+    </div>
+    <div class="row form-group mt-2">
+      <label class="col-2">Password:</label>
+      <div class="col-10">
+        <input type="password" class="form-control" name="pass" formControlName="pass">
+      </div>
+    </div>
+    <div class="row form-group mt-2">
+      <label class="col-2">Paises:</label>
+      <div class="col-10">
+        <select class="form-control" formControlName="pais">
+          <option selected>Seleccione</option>
+          <option value="1">Colombia</option>
+          <option value="2">Argentina</option>
+        </select>
+      </div>
+    </div>
+    <div formGroupName="direccion">
+      <h5>Dirección</h5>
+      <div class="row form-group mt-2">
+        <label class="col-2">Calle:</label>
+        <div class="col-10">
+          <input type="text" class="form-control" name="calle" formControlName="calle">
+        </div>
+      </div>
+      <div class="row form-group mt-2">
+        <label class="col-2">Avenida:</label>
+        <div class="col-10">
+          <input type="text" class="form-control" name="avenida" formControlName="avenida">
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary col-md-4 mt-4 mx-auto" (click)="guardar()">Guardar</button>
+    <span>
+      <pre>Contraseña: {{ getError('pass') | json }}</pre>
+    </span>
+  </div>
+</form>
+
