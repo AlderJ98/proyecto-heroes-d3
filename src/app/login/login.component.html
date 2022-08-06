@@ -1,1 +1,71 @@
-<h1>Login</h1>
+<section class="vh-100 bg-danger">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-flex justify-content-center align-items-center">
+              <img src="assets/fondo.jpg"
+                alt="login form" class="figure-img img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+                <form [formGroup]="form">
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fa-solid fa-user-astronaut fa-2x me-3" style="color: #FF0000;"></i>
+                    <span class="h1 fw-bold mb-0">Iniciar Sesión</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inicia con tu cuenta</h5>
+
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control form-control-lg" placeholder="Ingresa el correo" name="email" formControlName="email">
+                    <label>Email address</label>
+                    <small
+                      *ngIf="email?.invalid"
+                      class="text-danger mt-2">
+                      {{ email.errors['required'] ? 'Es requerido' :
+                        email.errors['email'] ? 'Debe ser tipo correo' :
+                        email.errors['pattern']['requiredPattern'] ? 'Debe contener letras, números y punto (.)' : ''
+                      }}</small>
+                      <small
+                        *ngIf="email?.valid"
+                        class="text-success mt-2">
+                          Bien!
+                      </small>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control form-control-lg" placeholder="Ingresa la constraseña" name="pass" formControlName="pass" autocomplete="on">
+                    <label>Contraseña</label>
+                    <small
+                      *ngIf="pass?.invalid"
+                      class="text-danger mt-2">
+                        {{ pass.errors['required'] ? 'Es requerido' :
+                          pass.errors['primeraLetra'] ? pass.errors['primeraLetra'] :
+                          pass.errors['punto'] ?  pass.errors['punto'] :
+                          pass.errors['minlength'] ? 'Minimo ' + pass.errors['minlength']['requiredLength'] + ' carácteres' : ''
+                        }}
+                    </small>
+                    <small
+                      *ngIf="pass?.valid"
+                      class="text-success mt-2">
+                        Bien!
+                    </small>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-danger btn-lg btn-block" type="button" (click)="guardar()">Iniciar sesión</button>
+                  </div>
+
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">¿No tienes cuenta? <a style="color: #393f81;" [routerLink]="['register']">Registrate</a></p>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

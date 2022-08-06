@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContrasenaPipe } from './pipes/contrasena.pipe';
 import { FormularioNgmodelComponent } from './formularios/formulario-ngmodel/formulario-ngmodel.component';
 import { FormularioReactivoComponent } from './formularios/formulario-reactivo/formulario-reactivo.component';
+import { RegisterComponent } from './register/register.component';
 
 // decorador empieza con @ es una funcion comun y corriente
 @NgModule({
@@ -30,7 +31,8 @@ import { FormularioReactivoComponent } from './formularios/formulario-reactivo/f
     CapitalizarPipe,
     ContrasenaPipe,
     FormularioNgmodelComponent,
-    FormularioReactivoComponent
+    FormularioReactivoComponent,
+    RegisterComponent
   ],
   // importar las librerias
   imports: [

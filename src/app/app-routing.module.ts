@@ -4,6 +4,7 @@ import { EjemplosPipesComponent } from './ejemplos-pipes/ejemplos-pipes.componen
 import { FormularioNgmodelComponent } from './formularios/formulario-ngmodel/formulario-ngmodel.component';
 import { FormularioReactivoComponent } from './formularios/formulario-reactivo/formulario-reactivo.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,9 @@ const routes: Routes = [
   },
   {
     path:'login', component: LoginComponent
+  },
+  {
+    path:'login/register', component: RegisterComponent
   },
   {
     path:'form/ngmodel', component: FormularioNgmodelComponent

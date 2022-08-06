@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   form:FormGroup = new FormGroup({});
 
@@ -19,23 +19,14 @@ export class LoginComponent implements OnInit {
   buildForm(){
     this.form = this.formBuilder.group({
       email: ['',[Validators.required, Validators.email, Validators.pattern('[a-z/A-Z/0-9/@.]*')]],
-      pass: ['',[Validators.required, Validators.minLength(8), this.validarContrasena]],
+      pass: ['',[Validators.required, Validators.minLength(8)]],
+      nombre: ['',[Validators.required]],
+      apellido: ['',[Validators.required]],
+      documento: ['',[Validators.required]],
+      direccion: ['',[Validators.required]],
+      telefono: ['',[Validators.required]],
+      genero: ['',[Validators.required]],
     });
-  }
-
-  validarContrasena(control: AbstractControl){
-    const contrasena:string = control.value || '';
-    let error = null;
-    let primeraLetra = contrasena.charAt(0);
-    let aceptados = /^[a-zA-Z]+$/;
-
-    if(contrasena.charAt(contrasena.length - 1) != '.'){
-      error = { punto: 'Debe terminar con un punto!' }
-    }
-    if(!primeraLetra.match(aceptados)){
-      error = { ...error, primeraLetra: 'El primer carácter debe ser letra!' }
-    }
-    return error;
   }
 
   guardar(){
@@ -53,16 +44,13 @@ export class LoginComponent implements OnInit {
 
   }
 
-  getError(controlName:string){
-    let error = null;
-    const control = this.form.get(controlName);
-    if(control?.errors != null){
-      error = control?.errors;
-    }
-    return error;
-  }
-
   get email (): AbstractControl | null { return this.form.get('email') }
   get pass (): AbstractControl | null { return this.form.get('pass') }
+  get nombre (): AbstractControl | null { return this.form.get('nombre') }
+  get apellido (): AbstractControl | null { return this.form.get('apellido') }
+  get documento (): AbstractControl | null { return this.form.get('documento') }
+  get direccion (): AbstractControl | null { return this.form.get('direccion') }
+  get telefono (): AbstractControl | null { return this.form.get('telefono') }
+  get genero (): AbstractControl | null { return this.form.get('genero') }
 
 }
