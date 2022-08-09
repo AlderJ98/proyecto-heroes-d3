@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PaisService } from 'src/app/services/pais.service';
 
 @Component({
   selector: 'app-formulario-reactivo',
@@ -9,11 +10,23 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 export class FormularioReactivoComponent implements OnInit {
 
   form:FormGroup = new FormGroup({});
+  paises:any[] = [];
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(
+    private formBuilder:FormBuilder,
+    private _servicePais:PaisService
+    ) { }
 
   ngOnInit(): void {
     this.buildForm();
+    this.getPaises();
+  }
+
+  getPaises(){
+    this._servicePais.getPaises().subscribe((data:any[]) => {
+      this.paises = data;
+    });
+
   }
 
   buildForm(){

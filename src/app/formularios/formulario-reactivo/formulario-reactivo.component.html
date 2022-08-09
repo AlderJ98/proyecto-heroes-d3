@@ -33,9 +33,8 @@
       <label class="col-2">Paises:</label>
       <div class="col-10">
         <select class="form-control" formControlName="pais">
-          <option selected>Seleccione</option>
-          <option value="1">Colombia</option>
-          <option value="2">Argentina</option>
+          <option selected value="">Seleccione...</option>
+          <option *ngFor="let pais of paises" [value]="pais.numericCode">{{ pais.name }}</option>
         </select>
       </div>
     </div>
