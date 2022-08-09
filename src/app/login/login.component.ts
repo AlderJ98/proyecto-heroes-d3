@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
     } else {
       alert('Correo y/o contraseña incorrecta');
     }
-
   }
 
   getError(controlName:string){

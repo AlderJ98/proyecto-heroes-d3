@@ -14,7 +14,7 @@ const routes: Routes = [
     path:'login', component: LoginComponent
   },
   {
-    path:'login/register', component: RegisterComponent
+    path:'register', component: RegisterComponent
   },
   {
     path:'form/ngmodel', component: FormularioNgmodelComponent
