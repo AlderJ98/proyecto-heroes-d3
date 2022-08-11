@@ -1,0 +1,17 @@
+<h1 class="text-center m-4">TABLA API</h1>
+<table class="table">
+  <thead class="bg-primary text-white">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dato of datos">
+      <th scope="row">{{ dato.id }}</th>
+      <td>{{ dato.title }}</td>
+      <td>{{ dato.completed }}</td>
+    </tr>
+  </tbody>
+</table>
